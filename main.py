@@ -1,6 +1,7 @@
 import os
 
-def main():
+def main():    
+    domain = input("What is your domain?\n> ")    
     if not os.path.exists("fiddler_cookies.txt"):
         with open("fiddler_cookies.txt", "w", encoding="utf-8") as f:
             f.write("")
@@ -18,7 +19,7 @@ def main():
         for x in text:
             item, value = x.split("=")
             temp_json = {}
-            temp_json["domain"] = ".hoyoverse.com"
+            temp_json["domain"] = domain
             temp_json["name"] = item
             temp_json["value"] = value
             mihoyo_json.append(temp_json)
